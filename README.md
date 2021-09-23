@@ -1,7 +1,7 @@
 ## console program "Image fetcher"
 The program is written in the Ruby language.
 The program downloads images by their URLs. URLs are stored in "data/data.txt" file.
-Downloaded images will stored in "image" directory.
+Downloaded images will stored in "downloads" directory.
 
 ## Installation
 Use the command below to install gems.
