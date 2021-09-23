@@ -18,7 +18,7 @@ class Downloader
     link[link.rindex('/') + 1..-1]
   end
 
-  def self.download(link = '', path_to = './downloads/')
+  def self.download(link = '', path_to = '../ImageFetcher/downloads/')
     begin
       read_file = open(link).read
       File.open("#{path_to}#{generate_name(link)}", 'wb') do |file|

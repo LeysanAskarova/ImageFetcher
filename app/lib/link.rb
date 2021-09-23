@@ -3,7 +3,7 @@
 require 'net/http'
 require 'open-uri'
 require 'uri'
-require_relative 'image'
+require_relative '../models/image'
 
 # service for working with URL
 class Link
@@ -23,8 +23,8 @@ class Link
   ].freeze
 
   def validate
-    if self.check_url == true
-      response = self.make_request
+    if check_url == true
+      response = make_request
       check_response(response) if response
     end
   end

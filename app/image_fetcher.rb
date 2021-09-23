@@ -9,14 +9,14 @@ separator = $/
 raise Errno::ENOENT, "No such file or directory (#{file_path})" unless File.exist?(file_path)
 File.open(file_path) do |file|
   file.each_line(separator) do |line|
-    link = Link.new(line.strip)
-    link.validate
+    file_path = Link.new(line.strip)
+    file_path.validate
 
-    unless link.errors.empty?
-      puts link.errors
+    unless file_path.errors.empty?
+      puts file_path.errors
       next
     else
-      Downloader.download(link.link)
+      Downloader.download(file_path.link)
     end
   end
   file.close
